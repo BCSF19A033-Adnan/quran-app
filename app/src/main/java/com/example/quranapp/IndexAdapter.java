@@ -50,7 +50,6 @@ public class IndexAdapter extends RecyclerView.Adapter<IndexAdapter.ViewHolder> 
             super(itemView);
             indexTitle = itemView.findViewById(R.id.indexTitle);
 
-            String st = (String) indexTitle.getText();
 
             // handle onClick
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -58,9 +57,12 @@ public class IndexAdapter extends RecyclerView.Adapter<IndexAdapter.ViewHolder> 
                 public void onClick(View v) {
                     Toast.makeText(v.getContext(), "clicked on item", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(ctx, DataShowActivity.class);
-                    intent.putExtra("data",st);
-                    ctx.startActivity(intent);
+                    String st = (String) indexTitle.getText();
+
+                    Intent intent = new Intent(ctx.getApplicationContext(), DataShowActivity.class);
+                    intent.putExtra("data", st);
+                    ctx.getApplicationContext().startActivity(intent);
+//                    v.getContext().startActivity(intent);
                 }
             });
         }
