@@ -45,16 +45,26 @@ public class DataShowActivity extends AppCompatActivity {
         {
             isPara=true;
             no = Integer.parseInt(arr[1]);
+            Log.d("op2", String.valueOf(no));
+            try {
+                getParrahVerses(no);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
         else
         {
             no = Integer.parseInt(arr[1]);
+            Log.d("op2", String.valueOf(no));
+            try {
+                getSurrahVerses(no);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
 
-
-
-
 //        Toast.makeText(getApplicationContext(), "data is: "+line, Toast.LENGTH_SHORT).show();
+        Log.d("op3", String.valueOf(verseList));
 
         recyclerView = findViewById(R.id.dataViewRecycler);
         layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -76,6 +86,7 @@ public class DataShowActivity extends AppCompatActivity {
                     String surah = verseDetail.getString("englishName");
                     int num = verseDetail.getInt("number");
                     String ayat = verseDetail.getString("text");
+                    Log.d("opp", String.valueOf(ayat));
                     String revType = verseDetail.getString("revelationType");
                     int verseNum = verseDetail.getInt("numberInSurah");
                     int parahNo = verseDetail.getInt("juz");
@@ -92,7 +103,7 @@ public class DataShowActivity extends AppCompatActivity {
                             verseDetail.getString("PushtoTafseer")
                     };
                     verseList.add(new Verse(num, ayat, revType, surah, verseNum, parahNo, translations));
-                    adapter.notifyItemRangeChanged(0, verseList.size());
+//                    adapter.notifyItemRangeChanged(0, verseList.size());
                 }
             }
         } catch (JSONException e) {
@@ -127,7 +138,7 @@ public class DataShowActivity extends AppCompatActivity {
                             verseDetail.getString("PushtoTafseer")
                     };
                     verseList.add(new Verse(num, ayat, revType, surah, verseNum, parahNo, translations));
-                    adapter.notifyItemRangeChanged(0, verseList.size());
+//                    adapter.notifyItemRangeChanged(0, verseList.size());
                 }
             }
         } catch (JSONException e) {

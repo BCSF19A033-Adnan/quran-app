@@ -33,6 +33,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // bind the data
         holder.verseText.setText(data.get(position).getText());
+
     }
 
     @Override
@@ -45,8 +46,8 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            verseText = itemView.findViewById(R.id.verseText);
-            
+            verseText = itemView.findViewById(R.id.verse);
+
         }
     }
 }
