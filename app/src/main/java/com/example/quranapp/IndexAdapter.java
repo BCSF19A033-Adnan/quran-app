@@ -2,6 +2,7 @@ package com.example.quranapp;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,12 @@ import java.util.List;
 public class IndexAdapter extends RecyclerView.Adapter<IndexAdapter.ViewHolder> {
     LayoutInflater inflater;
     List<String> data;
+    Context ctx;
 
     public IndexAdapter(Context ctx, List<String> data){
         this.inflater = LayoutInflater.from(ctx);
         this.data = data;
+        this.ctx=ctx;
     }
 
     @NonNull
@@ -47,11 +50,17 @@ public class IndexAdapter extends RecyclerView.Adapter<IndexAdapter.ViewHolder> 
             super(itemView);
             indexTitle = itemView.findViewById(R.id.indexTitle);
 
+            String st = (String) indexTitle.getText();
+
             // handle onClick
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(v.getContext(), "clicked on item", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(ctx, DataShowActivity.class);
+                    intent.putExtra("data",st);
+                    ctx.startActivity(intent);
                 }
             });
         }
