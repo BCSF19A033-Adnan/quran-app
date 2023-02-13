@@ -9,7 +9,7 @@ public class Verse {
     private String urduTranslation, urduTafseer, englishTranslation, englishTafseer, sindhiTranslation,
             sindhiTafseer, hindiTranslation, hindiTafseer, pushtoTranslation, pushtoTafseer;
     private int numberInSurah;
-    
+
     public Verse(int num, String ayat, String revType, String surah, int verseNum, int parah, String[] translations)
     {
         number=num;
