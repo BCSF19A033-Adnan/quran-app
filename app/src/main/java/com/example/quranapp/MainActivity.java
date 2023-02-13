@@ -16,7 +16,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView parah,surrah;
-    boolean isByParah;
+    String browseCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId())
         {
             case R.id.byParrah:
-                isByParah = true;
+                browseCategory = "p";
                 loadIndex();
                 break;
             case R.id.bySurrah:
-                isByParah = false;
+                browseCategory = "s";
                 loadIndex();
                 break;
         }
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void loadIndex() {
         Intent intent = new Intent(getApplicationContext(), IndexActivity.class);
-        if(isByParah)
+        if(browseCategory.equals("p"))
         {
             intent.putExtra("category","p");
         }

@@ -31,16 +31,31 @@ public class IndexActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new IndexAdapter(getApplicationContext(), parahList) ;
-        recyclerView.setAdapter(adapter);
+        if(searchCategory.equals("p"))
+        {
+            adapter = new IndexAdapter(getApplicationContext(), parahList) ;
+            recyclerView.setAdapter(adapter);
+        }
+        else if(searchCategory.equals("s"))
+        {
+            adapter = new IndexAdapter(getApplicationContext(), surrahList) ;
+            recyclerView.setAdapter(adapter);
+        }
     }
 
     private void initializeDataInList() {
         for(int i=1; i<=30; i++)
         {
-            String st = "Parah ";
+            String st = "Para ";
             st = st+i;
             parahList.add(st);
+        }
+
+        for(int i=1; i<=114; i++)
+        {
+            String st = "Sura ";
+            st = st+i;
+            surrahList.add(st);
         }
     }
 }
