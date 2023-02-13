@@ -48,7 +48,7 @@ public class IndexAdapter extends RecyclerView.Adapter<IndexAdapter.ViewHolder> 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            indexTitle = itemView.findViewById(R.id.indexTitle);
+            indexTitle = itemView.findViewById(R.id.verseText);
 
 
             // handle onClick

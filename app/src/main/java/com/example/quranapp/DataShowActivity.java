@@ -56,11 +56,11 @@ public class DataShowActivity extends AppCompatActivity {
 
 //        Toast.makeText(getApplicationContext(), "data is: "+line, Toast.LENGTH_SHORT).show();
 
-//        recyclerView = findViewById(R.id.dataViewRecycler);
-//        layoutManager = new LinearLayoutManager(getApplicationContext());
-//        recyclerView.setLayoutManager(layoutManager);
-//        adapter = new DataAdapter(getApplicationContext(), verseList) ;
-//        recyclerView.setAdapter(adapter);
+        recyclerView = findViewById(R.id.dataViewRecycler);
+        layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new DataAdapter(getApplicationContext(), verseList) ;
+        recyclerView.setAdapter(adapter);
 
     }
 
