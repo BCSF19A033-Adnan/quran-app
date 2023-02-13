@@ -72,6 +72,8 @@ public class DataShowActivity extends AppCompatActivity {
         adapter = new DataAdapter(getApplicationContext(), verseList) ;
         recyclerView.setAdapter(adapter);
 
+//        recyclerView.seron
+
     }
 
     private void getSurrahVerses(int no) throws JSONException {

@@ -8,7 +8,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="135dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -27,20 +27,19 @@
             android:paddingBottom="5sp">
 
             <TextView
-                android:id="@+id/VerseLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Verse:" />
-
-            <TextView
                 android:id="@+id/verse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5sp"
-                android:layout_weight="1"
-                android:text="TextView" />
+                android:layout_weight="1" />
 
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:contentDescription="Select"
+                android:minHeight="48dp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
