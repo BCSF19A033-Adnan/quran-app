@@ -13,18 +13,15 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:color/background_dark"
         app:cardBackgroundColor="@android:color/system_accent1_0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="s">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/background_dark"
             android:orientation="vertical"
             android:padding="4sp"
             android:paddingEnd="5sp"
@@ -36,7 +33,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5sp"
                 android:layout_weight="1"
-                android:background="@android:color/background_dark"
                 android:textColor="#00BCD4"
                 android:textSize="16sp" />
 
@@ -45,7 +41,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5sp"
-                android:background="@android:color/background_dark"
                 android:contentDescription="Select"
                 android:foregroundTint="#85C5CD"
                 android:minHeight="48dp" />
@@ -54,7 +49,6 @@
                 android:id="@+id/translationField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/background_dark"
                 android:textColor="#85C5CD" />
         </LinearLayout>
 

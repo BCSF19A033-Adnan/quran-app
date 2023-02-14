@@ -55,6 +55,7 @@ public class IndexActivity extends AppCompatActivity {
         {
             String st = "Sura ";
             st = st+i;
+            st = st+" ";
             surrahList.add(st);
         }
     }

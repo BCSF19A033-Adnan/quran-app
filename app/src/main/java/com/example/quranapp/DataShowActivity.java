@@ -77,12 +77,19 @@ public class DataShowActivity extends AppCompatActivity {
     }
 
     private void getSurrahVerses(int no) throws JSONException {
+        List<String> temp = new ArrayList<>();
 
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
             JSONArray verseArray = obj.getJSONArray("verses");
             for (int i = 0; i < verseArray.length(); i++) {
                 JSONObject verseDetail = verseArray.getJSONObject(i);
+
+                if(temp.contains(verseDetail.getString("englishName"))==false)
+                {
+                    temp.add(verseDetail.getString("englishName"));
+                }
+
                 int surrahNo = verseDetail.getInt("surah_number");
                 if (surrahNo == no) {
                     String surah = verseDetail.getString("englishName");
@@ -111,6 +118,8 @@ public class DataShowActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+
     }
 
     private void getParrahVerses(int no) throws JSONException {
