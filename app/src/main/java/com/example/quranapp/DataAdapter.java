@@ -42,7 +42,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         // bind the data
 
         holder.verseText.setText(data.get(position).getText());
-
+        holder.transField.setText(data.get(holder.getAdapterPosition()).getUrduTranslation());
 
         holder.spinnerLanguages.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -79,7 +79,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                holder.transField.setText(data.get(holder.getAdapterPosition()).getUrduTranslation());
             }
 
         });
